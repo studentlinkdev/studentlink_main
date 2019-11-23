@@ -4,7 +4,9 @@
   "description": "Student Link App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "local-dev": "npx @11ty/eleventy --input=thesite.io --output=thesite.io/public --serve",
+    "site-build": "npx @11ty/eleventy --input=thesite.io --output=thesite.io/public",
+    "quick-gh": "npx gh-pages --message 'ci deployment 2' --dist thesite.io/public"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/studentlinkdev/studentlink_main#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.9.0"
+    "@11ty/eleventy": "^0.9.0",
+    "gh-pages": "^2.1.1"
   }
 }
