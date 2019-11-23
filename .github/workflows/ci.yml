@@ -19,8 +19,6 @@ jobs:
     - name: npm install, build, and deploy
       run: |
         npm run site-build
-        git config --global user.name "GITHUB CI"
-        git config --global user.email "ci@studentlink.co.za"
-        npm run quick-gh
+        npx gh-pages --user 'CI User <ci@studentlink.co.za>' --message '${{ github.ref }}' --dist thesite.io/public
       env:
         CI: true
