@@ -19,7 +19,7 @@ jobs:
     - name: npm install, build, and deploy
       run: |
         npm run site-build
-        npx gh-pages -r https://$CI_GITHUB@$github.com/${{ github.repository }}.git -m '${{ github.ref }}' --dist thesite.io/public
+        npx gh-pages -m '${{ github.ref }}' --dist thesite.io/public
       env:
         CI: true
-        CI_GITHUB: ${{ secrets.CI_GITHUB }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
