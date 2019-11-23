@@ -16,6 +16,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
+    - name: Show git config
+      run: |
+        git config --list
     - name: npm install, build, and deploy
       run: |
         npm run site-build
