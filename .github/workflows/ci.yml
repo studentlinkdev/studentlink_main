@@ -19,6 +19,6 @@ jobs:
     - name: npm install, build, and deploy
       run: |
         npm run site-build
-        npx gh-pages --user 'CI User <ci@studentlink.co.za>' --message '${{ github.ref }}' --dist thesite.io/public
+        npx gh-pages -r https://${GITHUB_TOKEN}@$github.com/${GITHUB_REPO}.git --message '${{ github.ref }}' --dist thesite.io/public
       env:
         CI: true
